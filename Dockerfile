@@ -9,5 +9,15 @@ RUN apt-get update && apt-get install -y lsb-release ca-certificates curl && \
     | tee /etc/apt/sources.list.d/docker.list > /dev/null && \
     apt-get update && apt-get install -y docker-ce-cli && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+# Instalar Node.js (pnpm requiere Node.js)
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
+    apt-get update && \
+    apt-get install -y nodejs
+
+# Instalar pnpm globalmente usando npm (ya que Node.js está instalado)
+RUN npm install -g pnpm
+
+# Opcional: Verificar la instalación
+RUN pnpm --version
 USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
