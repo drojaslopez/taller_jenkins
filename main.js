@@ -5,8 +5,14 @@ app.use(express.json());
 
 let items = ["Elemento 1", "Elemento 2"];
 
-app.get("/home", (req, res) => {
-  res.json({ items });
+app.get("/tasks", (req, res) => {  
+  
+  res.status(200).json({message:`Hola, soy una respuesta GET`});  
+});
+
+app.get("/tasks/:id", (req, res) => {
+  const id = req.params;
+  res.status(200).json({message:`Hola, soy una respuesta GET con ${id}`,id});  
 });
 
 app.post("/home", (req, res) => {
