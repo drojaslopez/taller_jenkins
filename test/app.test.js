@@ -1,17 +1,16 @@
+const app = require("../main.js");
+const supertest = require("supertest");
 
-const request = require('supertest');
-const app = require('../main'); // Adjust the path to your main.js file
-
-describe('API Tests', () => {
-  it('should return a list of users', async () => {
-    const res = await request(app).get('/users');
+describe("API Tests", () => {
+  it("should return a list of tasks", async () => {
+    const res = await request(app).get("/tasks");
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveLength(2);
   });
 
-  it('should return a single user', async () => {
-    const res = await request(app).get('/users/1');
+  it("should return a single task", async () => {
+    const res = await request(app).get("/tasks/2");
     expect(res.statusCode).toEqual(200);
-    expect(res.body.name).toEqual('Alice');
+    expect(res.body.name).toEqual("Task 2");
   });
 });
