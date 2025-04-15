@@ -1,6 +1,6 @@
 
 const request = require('supertest');
-const app = require('../app');
+const app = require('../main'); // Adjust the path to your main.js file
 
 describe('API Tests', () => {
   it('should return a list of users', async () => {

@@ -41,7 +41,7 @@ git add .
 # Se crea el commit para identificar la subida al repositorio
 git commit -m "Subida incial"
 
-# Se verifica que se cargaran todo los archivos y el comentario del commit
+# Se verifica que se cargaran todos los archivos y el comentario del commit
 git status
 
 # Subir los cambios al repositorio remoto
