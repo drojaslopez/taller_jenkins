@@ -17,6 +17,14 @@
                 ])
             }
         }
+        
+        stage('Liquibase Integration') {
+  steps {
+    bat label:'', script: '''
+      liquibase -version
+    '''
+  }
+}
 
         // --- ETAPA 2: INSTALAR DEPENDENCIAS ---
         stage('Instalar Dependencias') {

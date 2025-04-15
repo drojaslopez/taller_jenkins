@@ -3,11 +3,6 @@ docker build -t mi-app-node .
 
 docker run -p 3000:3000 mi-app-node
 
-
-
-
-
-
 docker-compose up -d
 
 
