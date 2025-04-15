@@ -1,3 +1,27 @@
+# Taller CI
+### Daniel Rojas
+## Descripcion
+Se instalaron los siguiente paquete para poder realizar las pruebas con la bandera -D para declara que es para el ambiente de desarrollo
+
+``` bash
+npm i express jest supertest
+```
+Con el siguiente campo se instalaran las dependencia "node_module"
+``` bash
+npm i 
+```
+
+Para poder ejecutar el codigo en modo desarrollo
+
+``` bash
+npm run start
+```
+y el siguiente para ejecucion de prueba
+
+``` bash
+npm run test
+```
+
 
 docker build -t mi-app-node .
 

@@ -30,7 +30,21 @@ pipeline {
             }
         }
         // --- ETAPA 3: EJECUTAR PRUEBAS ---
-        
+        stage('Ejecutar Pruebas') {
+            options {
+                timeout(time: 5, unit: 'MINUTES') // por si se queda pegado
+            }
+            steps {
+                script {
+                    try {
+                        echo "🧪 Ejecutando pruebas unitarias con cobertura..."
+                        bat 'npm test -- --coverage --runInBand --ci --detectOpenHandles --forceExit'
+                    } catch (Exception e) {
+                        error("❌ Error en la etapa de pruebas")
+                    }
+                }
+            }
+        } 
         // --- ETAPA 4: CONSTRUIR Y EJECUTAR DOCKER ---
         stage('Docker') {
             steps {
