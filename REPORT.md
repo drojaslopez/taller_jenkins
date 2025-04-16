@@ -32,7 +32,7 @@ npm run test
 # Agregar el repositorio remoto
 git remote add origin https://github.com/drojaslopez/taller_jenkins
 
-# Verificar los compomente modificados
+# Verificar los compomente modificados o que se agregaran
 git status
 
 # Se añaden los elemento para subir al repositorio
@@ -50,7 +50,23 @@ git push -u origin main
 
 ## Ejecucion del Pipeline-
 
+El pipeline se configura estableciendo los parámetros que se detallan a continuación:
 
+ 
+   ![alt text](image.png)
+ 
+  ![alt text](image-1.png)
 
+Una vez configurado el pipeline, se procede a su ejecución. Este iniciará el despliegue de todas las etapas, las cuales serán detalladas en la consola del pipeline.
 
+![alt text](image-2.png)
 
+![alt text](image-3.png)
+
+## Ejecucion de los end point del contenedor
+
+Se utiliza ThunderClient para probar los servicios creados
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
