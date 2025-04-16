@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
-
 app.use(express.json());
-
 let tasks = [
     { id: 1, name: 'Task 1' },
     { id: 2, name: 'Task 2' }
@@ -19,6 +17,5 @@ app.get('/tasks/:id', (req, res) => {
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`API is running on port ${PORT}`));
-
+//app.listen(PORT, () => console.log("API is running on port ${PORT}"));
 module.exports = app;
